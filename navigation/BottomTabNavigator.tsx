@@ -1,14 +1,20 @@
-import { Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons,MaterialCommunityIcons,AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/HomeScreen';
+import TabOneScreen from '../screens/home/HomeScreen';
+import TweetContent from '../screens/home/TweetContent';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import MessageScreen from '../screens/message';
+import SearchScreen from '../screens/search';
+import SerchHeader from './serchHeader';
 import ProfilePicture from '../components/profilePicture/index';
-import { BottomTabParamList, HomeNavigatorParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList,MessageNavigationParamList,
+  SearchNavigationParamList,HomeNavigatorParamList,
+   TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -20,7 +26,8 @@ export default function BottomTabNavigator() {
       initialRouteName="Home"
       tabBarOptions={{
       showLabel:false,
-      activeTintColor: Colors[colorScheme].tint }}>
+      activeTintColor: Colors[colorScheme].tint }}
+      >
       <BottomTab.Screen
       name="Home"
         component={HomeNavigator}
@@ -30,7 +37,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Search"
-        component={TabTwoNavigator}
+        component={SearchNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-search" color={color} />,
         }}
@@ -44,7 +51,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Messages"
-        component={TabTwoNavigator}
+        component={MessageNavigation}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-mail" color={color} />,
         }}
@@ -98,6 +105,12 @@ function HomeNavigator() {
 
        }}
       />
+        <TabOneStack.Screen
+        name="TweetContent"
+        options={{
+        headerTitle:"Tweet"}}
+        component={TweetContent}/>
+
     </TabOneStack.Navigator>
   );
 }
@@ -113,5 +126,76 @@ function TabTwoNavigator() {
         options={{ headerTitle: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const SearchNavigationStack = createStackNavigator<SearchNavigationParamList>();
+
+function SearchNavigator() {
+  return (
+    <SearchNavigationStack.Navigator>
+      <SearchNavigationStack.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{
+          // headerTitle:'Homes'
+           headerTitle: ()=>{
+            return   <SerchHeader/>
+        },
+        headerRightContainerStyle:{
+          marginRight:15,
+        },
+        headerLeftContainerStyle:{
+          marginLeft:15,
+        },
+        headerRight:()=>{
+          return <AntDesign size={30} color={Colors.light.tint} name={"setting"}/>
+        },
+        headerLeft:()=>(
+        <ProfilePicture
+         size={30} 
+         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+        )
+
+       }}
+      />
+    </SearchNavigationStack.Navigator>
+  );
+}
+
+const MessageNavigationStack = createStackNavigator<MessageNavigationParamList>();
+
+function MessageNavigation() {
+  return (
+    <MessageNavigationStack.Navigator>
+      <MessageNavigationStack.Screen
+        name="MessageScreen"
+        component={MessageScreen}
+        // options={{ headerTitle: 'message' }
+
+        options={{
+          headerTitle:'Messages',
+        
+        headerRightContainerStyle:{
+          marginRight:15,
+        },
+        headerLeftContainerStyle:{
+          marginLeft:15,
+        },
+        headerRight:()=>{
+          return <AntDesign 
+          size={25} color={Colors.light.tint}
+           name={"setting"}/>
+        },
+        headerLeft:()=>(
+        <ProfilePicture
+         size={30} 
+         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+        )
+
+       }}
+      // }
+      />
+    </MessageNavigationStack.Navigator>
   );
 }

@@ -3,7 +3,11 @@ export type RootStackParamList = {
   NotFound: undefined;
   NewTweet:undefined;
   Fleet:undefined;
+  UserDm:undefined;
 };
+export type SearchNavigationParamList={
+  SearchScreen:undefined;
+}
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -14,8 +18,13 @@ export type BottomTabParamList = {
 
 export type HomeNavigatorParamList = {
   HomeScreen: undefined;
+  TweetContent: undefined;
+  
 };
+export type MessageNavigationParamList = {
+  MessageScreen: undefined;
 
+}
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };

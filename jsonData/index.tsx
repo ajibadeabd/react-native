@@ -50,8 +50,8 @@ const tweet = [{
     id:'t4',
     user:{
         id:'u4',
-        userName:'niyi',
-        name:'Ojay',
+        userName:'muhammed ajibade',
+        name:'muhammed',
         image:'https://pbs.twimg.com/profile_images/1250882162263547919/U0QTPtKn_400x400.jpg'
     },
     createdAt:'2021-01-11T22:05:55.010+00:00',

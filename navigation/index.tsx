@@ -5,7 +5,8 @@ import { ColorSchemeName } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import NewTweetScreen from '../screens/newTweetScreen';
-import FleetScreen from '../screens/fleet/Index';
+import FleetScreen from '../screens/story';
+import UserDm from '../screens/UserDm';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
