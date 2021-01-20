@@ -1,24 +1,28 @@
-import React from 'react'
-import { View,Text,StyleSheet } from 'react-native'
+// import { View,Text,StyleSheet } from 'react-native'
 import TweetButon from '../../components/newtweetButton';
 
-export default function Index() {
-    return (
-        <View style={styles.container}>
-            <Text>erf3r3w</Text>
-            {/* <Text>search</Text> */}
+import * as React from 'react';
+import { StyleSheet } from 'react-native';
+import { Text, View } from '../../components/Themed';
+import HomeSearch from '../../components/Search/HomeSearch';
+
+
+export default function TabOneScreen() {
+  return (
+    <View style={styles.container}>
+    <HomeSearch/>
             <TweetButon />
-        </View>
-    )
+
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      // paddingTop:35,
-     justifyContent: 'center',
-    },
-    
-  });
+  container: {
+    flex: 1,
+    backgroundColor:'lightgrey',
+
+    // alignItems: 'center',
+  },
   
+});

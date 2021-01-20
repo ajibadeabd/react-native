@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 export default function Index({eachUser}:any) {
     const navigation=useNavigation();
     const onPress= ()=>{
-        // navigation.navigate("NewTweet")
+        navigation.navigate("UserMessages")
     }
     const [message,setmessage]=useState('')
     const displaylastmessage =  ()=>{

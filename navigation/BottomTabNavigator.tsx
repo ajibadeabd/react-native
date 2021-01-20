@@ -1,18 +1,19 @@
 import { Ionicons,MaterialCommunityIcons,AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import  React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/home/HomeScreen';
 import TweetContent from '../screens/home/TweetContent';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import NotificationScreen from '../screens/notification';
 import MessageScreen from '../screens/message';
 import SearchScreen from '../screens/search';
 import SerchHeader from './serchHeader';
 import ProfilePicture from '../components/profilePicture/index';
 import { BottomTabParamList,MessageNavigationParamList,
+  NotificationParamList,
   SearchNavigationParamList,HomeNavigatorParamList,
    TabTwoParamList } from '../types';
 
@@ -26,7 +27,8 @@ export default function BottomTabNavigator() {
       initialRouteName="Home"
       tabBarOptions={{
       showLabel:false,
-      activeTintColor: Colors[colorScheme].tint }}
+      activeTintColor: Colors[colorScheme].tint 
+    }}
       >
       <BottomTab.Screen
       name="Home"
@@ -44,7 +46,7 @@ export default function BottomTabNavigator() {
       />
        <BottomTab.Screen
         name="Notifications"
-        component={TabTwoNavigator}
+        component={NotificationNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-notifications-outline" color={color} />,
         }}
@@ -77,7 +79,14 @@ function HomeNavigator() {
       <TabOneStack.Screen
         name="HomeScreen"
         component={TabOneScreen}
+        // screenOptions={{
+         
+        // }}
         options={{
+          headerStyle: {
+            // backgroundColor: '#FFF',
+            // marginTop
+          },
           // headerTitle:'Homes'
            headerTitle: ()=>{
          return  <Ionicons
@@ -88,6 +97,7 @@ function HomeNavigator() {
             color={Colors.light.tint}
              />
         },
+        headerTintColor: '#fff',
         headerRightContainerStyle:{
           marginRight:15,
         },
@@ -115,17 +125,36 @@ function HomeNavigator() {
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const NotificationScreenStack = createStackNavigator<NotificationParamList>();
 
-function TabTwoNavigator() {
+function NotificationNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <NotificationScreenStack.Navigator>
+      <NotificationScreenStack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{ 
+        //   headerTitle: ()=>{
+        //     return   <NotificationHeader/>
+        // },
+        headerLeft:()=>(
+          <ProfilePicture
+           size={30} 
+           image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+          ),
+          headerRight:()=>{
+            return <AntDesign size={25} color={Colors.light.tint} name={"setting"}/>
+          },
+          headerRightContainerStyle:{
+            marginRight:15,
+          },
+          headerLeftContainerStyle:{
+            marginLeft:15,
+          },
+          headerTitle: 'Notifications'
+         }}
       />
-    </TabTwoStack.Navigator>
+    </NotificationScreenStack.Navigator>
   );
 }
 
@@ -149,7 +178,7 @@ function SearchNavigator() {
           marginLeft:15,
         },
         headerRight:()=>{
-          return <AntDesign size={30} color={Colors.light.tint} name={"setting"}/>
+          return <AntDesign size={25} color={Colors.light.tint} name={"setting"}/>
         },
         headerLeft:()=>(
         <ProfilePicture
@@ -196,6 +225,7 @@ function MessageNavigation() {
        }}
       // }
       />
+      
     </MessageNavigationStack.Navigator>
   );
 }

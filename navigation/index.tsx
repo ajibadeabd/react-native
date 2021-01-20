@@ -1,12 +1,12 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName } from 'react-native';
+import { ColorSchemeName,View } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
+import UserMessages from '../components/message/EachMessage/messageDm';
 import NewTweetScreen from '../screens/newTweetScreen';
 import FleetScreen from '../screens/story';
-import UserDm from '../screens/UserDm';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -17,7 +17,8 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+      >
       <RootNavigator />
     </NavigationContainer>
   );
@@ -33,7 +34,12 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="Fleet" component={FleetScreen} />
       <Stack.Screen name="NewTweet" component={NewTweetScreen}  />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="UserMessages"
+       options={{ title: 'Message' }}
+      component={UserMessages}  />
+      <Stack.Screen name="NotFound" component={NotFoundScreen} 
+      options={{ title: 'Oops!' }}
+       />
     </Stack.Navigator>
   );
 }

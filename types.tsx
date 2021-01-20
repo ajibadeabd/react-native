@@ -9,6 +9,10 @@ export type SearchNavigationParamList={
   SearchScreen:undefined;
 }
 
+export type TopTabParamList = {
+  All: undefined;
+  Mention: undefined;
+};
 export type BottomTabParamList = {
   Home: undefined;
   Messages: undefined;
@@ -19,6 +23,12 @@ export type BottomTabParamList = {
 export type HomeNavigatorParamList = {
   HomeScreen: undefined;
   TweetContent: undefined;
+  
+};
+
+
+export type NotificationParamList = {
+  NotificationScreen: undefined;
   
 };
 export type MessageNavigationParamList = {

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         backgroundColor:Colors.light.tint,
         borderRadius:50,
         bottom:30,
-        // right:50,
+        right:50,
         marginLeft:110,
         width:60,
         height:60,

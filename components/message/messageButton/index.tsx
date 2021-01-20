@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 export default function Index() {
     const navigation=useNavigation();
     const onPress= ()=>{
-        navigation.navigate("UserDm")
+        // navigation.navigate("UserDm")
         console.log('object')
     }
     return (
