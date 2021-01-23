@@ -66,7 +66,7 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons  size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
@@ -110,7 +110,8 @@ function HomeNavigator() {
         headerLeft:()=>(
         <ProfilePicture
          size={30} 
-         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}
+         toggle/> 
         )
 
        }}
@@ -140,7 +141,8 @@ function NotificationNavigator() {
         headerLeft:()=>(
           <ProfilePicture
            size={30} 
-           image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+           image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}
+           toggle/> 
           ),
           headerRight:()=>{
             return <AntDesign size={25} color={Colors.light.tint} name={"setting"}/>
@@ -183,7 +185,8 @@ function SearchNavigator() {
         headerLeft:()=>(
         <ProfilePicture
          size={30} 
-         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}
+         toggle/> 
         )
 
        }}
@@ -219,7 +222,8 @@ function MessageNavigation() {
         headerLeft:()=>(
         <ProfilePicture
          size={30} 
-         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}/> 
+         image={'https://a-v2.sndcdn.com/assets/images/hp_creator_image-f3d92e09.jpg'}
+         toggle/> 
         )
 
        }}

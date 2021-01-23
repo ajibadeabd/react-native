@@ -9,6 +9,7 @@ import {TopTabParamList} from '../../types';
 import MessageButon from '../../components/message/messageButton/index';
 import All from '../../components/Notification/All';
 import Mention from '../../components/Notification/mention';
+import NewtweetButton from '../newTweetScreen'; 
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 const TopTab = createMaterialTopTabNavigator<TopTabParamList>();

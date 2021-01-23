@@ -1,23 +1,12 @@
-// import React from 'react'
-// import { View,Text } from 'react-native'
-// import styles from './styles'
-// export default function Index() {
-//     return (
-//         <View style={styles.container}>
-//             <Text>dm message</Text>
-//         </View>
-//     )
-// }
 
 import  React,{useState} from 'react';
 import { StyleSheet,SafeAreaView,TextInput,TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { MaterialIcons, Ionicons,  } from '@expo/vector-icons';
+import { MaterialIcons, Feather,Ionicons,  } from '@expo/vector-icons';
 import Colors from '../../../../constants/Colors';
-
 import { Text, View } from '../../../Themed';
 import ProfilePicture from '../../../profilePicture/index';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-// import styles from '../components/tweet/mainContainer/style';
+import styles from './styles';
 import { useNavigation } from '@react-navigation/native'
 
 export default function NewTweet() {
@@ -32,61 +21,83 @@ export default function NewTweet() {
   const [Tweet,setTweet]=useState('')
   const [imageurl,setTimageurl]=useState('')
   return (
-      <View style={styles.container}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+
+      <View style={styles.container} >
     {/* // <TouchableWithoutFeedback  onPress={Keyboard.dismiss}> */}
     <SafeAreaView style={styles.safe} >
     <View style={styles.headContainer}>
     <Ionicons name="arrow-back-sharp" 
+    style={{marginRight:5}}
     onPress={onPress}
     color={Colors.light.tint} size={26} />
+    <View>
+
     <ProfilePicture
-    
     image={"https://pbs.twimg.com/profile_images/1304122881878765568/IZNHjmPK_bigger.jpg"}
-    size={22}
-    />
+    size={32}
+    /><Text style={{fontSize:19,fontWeight:'bold',marginTop:5}}>kord</Text>
+    </View>
  
       
       </View>
-      <MaterialIcons name="info-outline" 
+      <MaterialIcons  name="info-outline" 
     onPress={onPress}
     color={Colors.light.tint}
      size={26} />
       
       </SafeAreaView>
+      <View style={styles.body}>
+        <View style={styles.profile}>
+          <View style={styles.profilenamehandle}>
+          <Text style={styles.profileUserName}>kord 
+          </Text>
+             <Text style={styles.profilehandle}>  @kord
+             </Text>
+          </View>
+          <Text style={styles.userProfile}>product designer hng finalist</Text>
+          <View style={styles.mynums}>
+
+          <Text style={styles.following}>
+             
+             <Text style={styles.num}>716  </Text>
+              Following </Text>
+          <Text style={styles.followwers}>
+          <Text style={styles.num}>  716  </Text>
+             Follower </Text>
+          </View>
+
+          <Text style={styles.followwers}> Joined April 2019</Text>
+        </View>
+      <Text style={styles.mine}>each user message</Text>
+      <Text style={styles.his}>eachea swdw cheacxh user message</Text>
+      <Text style={styles.mine}>each user message</Text>
+      <Text style={styles.his}>eachea swdw cheacxh user message</Text>
+      <Text style={styles.mine}>each user message</Text>
+      <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
+      <Text style={styles.his}>eachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
+        
       </View>
+      <View  style={styles.send}>
+      <MaterialIcons name="perm-media" style={styles.media}  size={28} color={Colors.dark.tint} />
+        <View style={styles.gif}>
+        <MaterialIcons name="gif" size={18} color={Colors.dark.tint} />
+
+        </View>
+      <TextInput style={styles.textarea}>
+  
+      </TextInput >
+<Feather name="send" size={24} color={Colors.dark.tint} />
+      </View>
+      </View>
+    </TouchableWithoutFeedback>
+
 
   )
 }
 
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection:'row',
-    paddingVertical:5,
-    paddingTop:40,
-     justifyContent: 'space-between',
-     alignContent:'center',
-     alignItems :'center',
-    // backgroundColor:'red',
-
-  },
-  safe:{
-
-    flexDirection:'row',
-    justifyContent: 'space-between',
-
-
-  },
-  headContainer:{
-    padding:10,
-    flexDirection:'row',
-    alignItems: 'center',
-
-    // justifyContent:'space-between',
-    // width:"100%",
-
-
-  }
+// const styles = StyleSheet.create({
+ 
 
   
-});
+// });

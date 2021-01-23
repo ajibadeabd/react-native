@@ -14,6 +14,8 @@ export default function Index() {
         navigation.navigate("NewTweet")
     }
     return (
+        <View style={{flex:1}}>
+
         <View style={styles.container}>
             <ScrollView>
           <MentionComponent show={true}/>
@@ -25,6 +27,8 @@ export default function Index() {
           <MentionComponent show={false}/>
 
           </ScrollView>
+
+        </View>
 <NewtweetButton/>
 
         </View>

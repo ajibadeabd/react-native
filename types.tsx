@@ -4,7 +4,12 @@ export type RootStackParamList = {
   NewTweet:undefined;
   Fleet:undefined;
   UserDm:undefined;
+  UserMessages:undefined;
 };
+export type RootDrawerParamList = {
+  Allstack: undefined;
+};
+
 export type SearchNavigationParamList={
   SearchScreen:undefined;
 }

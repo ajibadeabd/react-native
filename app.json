@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "whatsapp-clone",
-    "slug": "whatsapp-clone",
+    "name": "twitter-clone",
+    "slug": "twitter-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -26,7 +26,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.ajibadeabd.whatsappclone"
+      "package": "com.ajibadeabd.twitterclone"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
