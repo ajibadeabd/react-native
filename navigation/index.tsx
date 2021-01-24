@@ -50,6 +50,7 @@ function RootNavigator() {
     
 <Drawer.Navigator
 initialRouteName='Allstack'
+drawerContent={props=><DrawerContent {...props}/>}
 // drawerContent={DrawerContent}
 // drawerStyle={{
 //   backgroundColor:'red',
