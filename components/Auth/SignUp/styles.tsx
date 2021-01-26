@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex:1,
         // flexDirection:'row',
         // padding:5,
-        paddingTop:30,
+        paddingTop:50,
         //  justifyContent: 'space-between',
         //  alignContent:'center',
         //  alignItems :'center',
@@ -58,9 +58,17 @@ const styles = StyleSheet.create({
     
     
       },
+      create:{
+          fontSize:29,
+          fontWeight:'bold'
 
+      },
       headContainer:{
         flexDirection:'row',
+        // backgroundColor:'red',
+        width:'50%',
+        paddingLeft:20,
+        justifyContent:'space-between'
       },
       mine:{
 backgroundColor:'lightgrey',
@@ -87,7 +95,8 @@ maxWidth:'70%'
         maxWidth:'70%'
       },
       body:{
-        //   margin:2
+        padding:20,
+        paddingLeft:30
       },
       profile:{
           justifyContent:'center',
