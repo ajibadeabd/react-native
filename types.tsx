@@ -8,6 +8,7 @@ export type RootStackParamList = {
 };
 export type RootDrawerParamList = {
   Allstack: undefined;
+  AuthScreen:undefined;
 };
 
 export type SearchNavigationParamList={

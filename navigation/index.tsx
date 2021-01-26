@@ -7,6 +7,7 @@ import { ColorSchemeName,View,Text } from 'react-native';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import UserMessages from '../components/message/EachMessage/messageDm';
 import NewTweetScreen from '../screens/newTweetScreen';
+import AuthScreen from '../screens/Auth/AuthScreen';
 import FleetScreen from '../screens/story';
 import { RootStackParamList,RootDrawerParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
@@ -24,7 +25,9 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
       linking={LinkingConfiguration}
       // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
       >
-      <RootNavigator />
+        {'a'=='a'?
+        <AuthScreen/>
+        :<RootNavigator />}
     </NavigationContainer>
   );
 }
@@ -50,21 +53,9 @@ function RootNavigator() {
     
 <Drawer.Navigator
 initialRouteName='Allstack'
-drawerContent={props=><DrawerContent {...props}/>}
-// drawerContent={DrawerContent}
-// drawerStyle={{
-//   backgroundColor:'red',
-//   padding:30,
-//   paddingTop:50,
-
-// }}
-
-
->
+drawerContent={props=><DrawerContent {...props}/>}>
   <Drawer.Screen name='Allstack'  component={Allstack} />
-  {/* <Drawer.Screen name='a' component={()=>{return <Text>fvrf</Text>}} />  */}
-
-
+  {/* <Drawer.Screen name='AuthScreen'  component={AuthScreen} /> */}
 </Drawer.Navigator>
      
   );
