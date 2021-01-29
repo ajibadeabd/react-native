@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
           borderTopColor:'lightgrey',
           bottom:-3,
           padding:9,
+          width:'95%',
+          margin:'2%',
     },
     textarea:{
         borderBottomWidth:1,
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
       mine:{
 backgroundColor:'lightgrey',
 padding:10,
-margin:3,
+marginVertical:3,
 borderRadius:10,
 borderBottomLeftRadius:0,
 color:'black',
@@ -75,13 +77,9 @@ maxWidth:'70%'
       his:{
         backgroundColor:Colors.dark.tint,
         padding:10,
-        margin:10,
+        marginVertical:10,
         borderRadius:10,
         borderBottomRightRadius:0,
-// borderTopLeftRadius:22,
-
-        // borderTop
-        // borderBottomRadius:0,
         color:'white',
         alignSelf:'flex-end',
         maxWidth:'70%'

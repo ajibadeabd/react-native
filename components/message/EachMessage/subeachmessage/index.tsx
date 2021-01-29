@@ -36,7 +36,7 @@ export default function Index({eachUser}:any) {
             <Text style={styles.name}> {eachUser.userName}</Text>
             <Text style={styles.handle}> {eachUser.handle}</Text>
             </View>
-            <Text style={styles.days}>9 jan</Text>
+            <Text style={styles.days}>14 jan</Text>
 
             </View>
             <View style={styles.preText}>

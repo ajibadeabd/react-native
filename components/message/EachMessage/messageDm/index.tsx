@@ -69,14 +69,16 @@ export default function NewTweet() {
 
           <Text style={styles.followwers}> Joined April 2019</Text>
         </View>
-      <Text style={styles.mine}>each user message</Text>
-      <Text style={styles.his}>eachea swdw cheacxh user message</Text>
+        <View style={{marginHorizontal:'3.5%'}}>
+      <Text style={styles.mine}>veach user message</Text>
+      <Text style={styles.his}>eacheba swdw cheacxh user message</Text>
       <Text style={styles.mine}>each user message</Text>
       <Text style={styles.his}>eachea swdw cheacxh user message</Text>
       <Text style={styles.mine}>each user message</Text>
       <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
       <Text style={styles.his}>eachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
         
+      </View>
       </View>
       <View  style={styles.send}>
       <MaterialIcons name="perm-media" style={styles.media}  size={28} color={Colors.dark.tint} />

@@ -19,11 +19,11 @@ export default function SerchHeader() {
 const styles = StyleSheet.create({
     container:{
         // flex:1
+
     },
     tweetinput:{
         borderRadius:47,
-        // marginBottom:16,
-        // color:'red',
+        paddingVertical:'1.3%',
         textAlign:'center',
         backgroundColor:'lightgrey',
     }

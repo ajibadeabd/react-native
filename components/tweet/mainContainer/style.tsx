@@ -31,8 +31,6 @@ flexDirection:'row'
         marginRight:4,
         marginTop:5,
         lineHeight:19,
-        // alignItems:'center',
-        textAlign:'center',
     },
     image:{
         width:"100%",

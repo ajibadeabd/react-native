@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding:30,
     paddingTop:30,
-    alignItems: 'flex-start',
+    // alignItems: 'flex-start',
     //  justifyContent: 'center',
     backgroundColor:'#fff',
      color:'black',
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
   },
   newtweetcontainer:{
     flexDirection:'row',
+    margin:'5%'
   },
   containerinput:{
     marginLeft:10, 
