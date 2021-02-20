@@ -7,7 +7,7 @@ import { StyleSheet,SafeAreaView,TextInput,TouchableWithoutFeedback,
 import { MaterialIcons, AntDesign,Feather,Ionicons,  } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
 import { Text, View } from '../../Themed';
-import styles from './styles';
+import styles from './style';
 import { useNavigation } from '@react-navigation/native'
 
 export default function NewTweet() {

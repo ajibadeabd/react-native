@@ -25,7 +25,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
       linking={LinkingConfiguration}
       // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
       >
-        {'a'=='aa'?
+        {'a'=='a'?
         <AuthScreen/>
         :<RootNavigator />}
     </NavigationContainer>

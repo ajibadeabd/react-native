@@ -77,6 +77,12 @@ export default function NewTweet() {
       <Text style={styles.mine}>each user message</Text>
       <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
       <Text style={styles.his}>eachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
+      <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
+      <Text style={styles.his}>eachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
+      <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
+      <Text style={styles.his}>eachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
+      <Text style={styles.mine}>each user messedfjlewkhfcwekuiuohoyuyiutyiktyjhjage</Text>
+      <Text style={styles.his}>beachea swdw cheadfwclkjqdjrgskbjr;ocxh user message</Text>
         
       </View>
       </View>
