@@ -4,15 +4,9 @@ import Colors from '../../../constants/Colors'
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        // flexDirection:'row',
-        // padding:5,
-        paddingTop:30,
-        //  justifyContent: 'space-between',
-        //  alignContent:'center',
-        //  alignItems :'center',
-        // backgroundColor:'red',
-    
-      },
+         
+        paddingTop:50,
+    },
       gif:{
           borderColor:Colors.dark.tint,
           borderWidth:1,
@@ -58,9 +52,49 @@ const styles = StyleSheet.create({
     
     
       },
+      create:{
+          fontSize:24,
+          fontWeight:'bold'
 
+      },
+      input:{
+        fontSize:16,
+        color:"black",
+        // borderBottomColor:Colors.dark.tint,
+        marginTop:'11%',
+        borderBottomColor:'lightgrey',
+        borderBottomWidth:2,
+
+      },
+      instead:{
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingHorizontal:'10%',
+        paddingVertical:'7%',
+        fontSize:11
+      },
+      insteadInput1:{
+        fontSize:14,
+        color:Colors.dark.tint,
+        // padding:'3%'
+      },
+      insteadInput2:{
+        fontSize:14,
+        backgroundColor:Colors.dark.tint,
+        color:"#fff",
+        padding:'2.5%',
+        paddingHorizontal:'7%',
+        borderRadius:19
+
+
+      },
       headContainer:{
         flexDirection:'row',
+        // backgroundColor:'red',
+        width:'50%',
+        paddingLeft:20,
+        justifyContent:'space-between'
       },
       mine:{
 backgroundColor:'lightgrey',
@@ -87,7 +121,12 @@ maxWidth:'70%'
         maxWidth:'70%'
       },
       body:{
-        //   margin:2
+        padding:20,
+        paddingBottom:'14.5%',
+        paddingLeft:30,
+        // borderBottomWidth:1,
+        borderBottomColor:'lightgrey',
+
       },
       profile:{
           justifyContent:'center',

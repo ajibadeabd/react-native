@@ -1,66 +1,110 @@
 
 import  React,{useState} from 'react';
-import { StyleSheet,SafeAreaView,TextInput,TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { MaterialIcons, Feather,Ionicons,  } from '@expo/vector-icons';
+import { StyleSheet,SafeAreaView,TextInput,TouchableWithoutFeedback,
+  
+     Keyboard } from 'react-native';
+     
+// import {AsyncStorage} from "react-native-community/async-storage"    
+import { MaterialIcons, AntDesign,Feather,Ionicons,  } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
 import { Text, View } from '../../Themed';
-import ProfilePicture from '../../profilePicture/index';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native'
+import AsyncStorage from '@react-native-community/async-storage';
 
-export default function NewTweet() {
+export interface Props {
+  name: string;
+}
+//  function NewTweet() {
+  const  NewTweet: React.FC<Props> = (props) => {
+    // const  NewTweet= (props) => {
   const navigation=useNavigation();
     const onPress= ()=>{
-        navigation.goBack()
+        // navigation.goBack()
+        console.log('object')
     }
-  const onPostTweet=()=>{
-    console.log(imageurl)
-    console.log(Tweet)
+    const regWith= ()=>{
+      let reqWith = validator?email:phoneNumber
+      setWithReg(reqWith)
+    
   }
-  const [Tweet,setTweet]=useState('')
-  const [imageurl,setTimageurl]=useState('')
+  const onPostTweet=()=>{
+  }
+  const [name,setName]=useState('')
+  const [withReg,setWithReg]=useState('')
+  
+  const [password,setPassword]=useState('')
+  const [email,setEmail]=useState('')
+  const [phoneNumber,setPhoneNumber]=useState('')
+  const [validator,setValidator]=useState(true)
+  const load =async ()=>{
+    await AsyncStorage.setItem('user','user');
+
+    let getUser=await AsyncStorage.getItem('user')
+    if(getUser)
+    console.log(getUser)
+    return getUser
+  }
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-      <View style={styles.container} >
-    {/* // <TouchableWithoutFeedback  onPress={Keyboard.dismiss}> */}
-    <SafeAreaView style={styles.safe} >
+      <View style={styles.container}>
     <View style={styles.headContainer}>
-    <Ionicons name="arrow-back-sharp" 
+        <TouchableWithoutFeedback
+        onPress={onPress}>
+        <Ionicons name="arrow-back-sharp" 
     style={{marginRight:5}}
-    onPress={onPress}
-    color={Colors.light.tint} size={26} />
-    <View>
-
-    <ProfilePicture
-    image={"https://pbs.twimg.com/profile_images/1304122881878765568/IZNHjmPK_bigger.jpg"}
-    size={32}
-    /><Text style={{fontSize:19,fontWeight:'bold',marginTop:5}}>kord</Text>
-    </View>
- 
-      
+    onPress={()=>{
+            navigation.navigate('Experience')
+          }}
+    color={Colors.light.tint} size={28} />
+        </TouchableWithoutFeedback>
+    
+    
+    {/* <View style={styles.logo}> */}
+    <TouchableWithoutFeedback>
+    <AntDesign name="twitter" size={28} color={Colors.dark.tint} />
+    </TouchableWithoutFeedback>
       </View>
-      <MaterialIcons  name="info-outline" 
-    onPress={onPress}
-    color={Colors.light.tint}
-     size={26} />
-      
-      </SafeAreaView>
       <View style={styles.body}>
-     
+          <Text style={styles.create}>Login to Twitter  </Text>
+          <TextInput 
+           selectionColor={Colors.dark.tint} 
+           onChangeText={(text)=>{setName(text)}}
+           value={name}
+          //  selectionColor={Colors.dark.tint} 
+          //  underlineColorAndroid={Colors.dark.tint} 
+           style={styles.input} placeholder='phone number,Email address or username'/>
+    
+          <TextInput 
+          onChangeText={(text)=>{setPassword(text)}}
+          value={password}
+           style={styles.input} placeholder='password'/>
       </View>
-      <View  style={styles.send}>
-      <MaterialIcons name="perm-media" style={styles.media}  size={28} color={Colors.dark.tint} />
-        <View style={styles.gif}>
-        <MaterialIcons name="gif" size={18} color={Colors.dark.tint} />
+    
+    
+      <Text
+    onPress={load }
 
-        </View>
-      <TextInput style={styles.textarea}>
-  
-      </TextInput >
-<Feather name="send" size={24} color={Colors.dark.tint} />
-      </View>
+style={{
+    color:'#fff',
+    backgroundColor:Colors.dark.tint,
+    padding:"1.4%",
+    paddingHorizontal:"3.4%",
+    fontSize:15,
+    fontWeight:'bold',
+    position:'absolute',
+    bottom:12,
+    right:12,
+    borderRadius:40
+}}>
+    Login
+</Text>
+      <Text  
+      
+      >
+        {/* {load()} */}
+      </Text>
       </View>
     </TouchableWithoutFeedback>
 
@@ -68,6 +112,7 @@ export default function NewTweet() {
   )
 }
 
+export default NewTweet
 // const styles = StyleSheet.create({
  
 

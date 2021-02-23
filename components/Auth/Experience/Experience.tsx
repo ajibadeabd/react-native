@@ -9,12 +9,15 @@ import ProfilePicture from '../../profilePicture/index';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
 import { useNavigation } from '@react-navigation/native'
-
-export default function NewTweet() {
+export interface Props {
+  route: any;
+}
+  const  NewTweet: React.FC<Props> = ({route}) => {
   const navigation=useNavigation();
     const onPress= ()=>{
         navigation.goBack()
     }
+    console.log(route.params)
   const onPostTweet=()=>{
     console.log(imageurl)
     console.log(Tweet)
@@ -119,6 +122,11 @@ style={{fontSize:16,
 
     </View>
     <Text
+    onPress={()=>{
+        navigation.navigate('confirm_Create',{
+          params:route.params
+        })
+      }}
 
 style={{
     color:'#fff',
@@ -139,8 +147,4 @@ style={{
   )
 }
 
-// const styles = StyleSheet.create({
- 
-
-  
-// });
+export default NewTweet

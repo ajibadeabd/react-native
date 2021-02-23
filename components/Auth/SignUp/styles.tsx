@@ -4,15 +4,9 @@ import Colors from '../../../constants/Colors'
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        // flexDirection:'row',
-        // padding:5,
+         
         paddingTop:50,
-        //  justifyContent: 'space-between',
-        //  alignContent:'center',
-        //  alignItems :'center',
-        // backgroundColor:'red',
-    
-      },
+    },
       gif:{
           borderColor:Colors.dark.tint,
           borderWidth:1,

@@ -14,7 +14,7 @@ const navigation=useNavigation();
             <AntDesign name="twitter" size={24} color={color.dark.tint} />
                 </View>
 
-            <Text style={styles.see}>See what's happening in the world right now </Text>
+            <Text style={styles.see}>See what's happening in the world right now. </Text>
             <TouchableOpacity>
             <Text style={styles.create}
             onPress={()=>{
@@ -70,7 +70,7 @@ const styles= StyleSheet.create({
 
     },
     see:{
-        fontSize:35,
+        fontSize:32,
         fontWeight:'bold',
         alignSelf:'center',
         marginBottom:'11%',

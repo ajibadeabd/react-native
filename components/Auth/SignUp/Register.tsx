@@ -10,18 +10,30 @@ import { Text, View } from '../../Themed';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native'
 
-export default function NewTweet() {
+export interface Props {
+  name: string;
+}
+//  function NewTweet() {
+  const  NewTweet: React.FC<Props> = (props) => {
+    // const  NewTweet= (props) => {
   const navigation=useNavigation();
     const onPress= ()=>{
         // navigation.goBack()
         console.log('object')
     }
-  const onPostTweet=()=>{
-    console.log(imageurl)
-    console.log(Tweet)
+    const regWith= ()=>{
+      let reqWith = validator?email:phoneNumber
+      setWithReg(reqWith)
+    
   }
-  const [Tweet,setTweet]=useState('')
-  const [imageurl,setTimageurl]=useState('')
+  const onPostTweet=()=>{
+  }
+  const [name,setName]=useState('')
+  const [withReg,setWithReg]=useState('')
+  
+  const [dob,setDob]=useState('')
+  const [email,setEmail]=useState('')
+  const [phoneNumber,setPhoneNumber]=useState('')
   const [validator,setValidator]=useState(true)
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -33,9 +45,8 @@ export default function NewTweet() {
         <Ionicons name="arrow-back-sharp" 
     style={{marginRight:5}}
     onPress={()=>{
-
-      navigation.goBack()
-    }}
+            navigation.navigate('Experience')
+          }}
     color={Colors.light.tint} size={28} />
         </TouchableWithoutFeedback>
     
@@ -49,12 +60,26 @@ export default function NewTweet() {
           <Text style={styles.create}>Create your account</Text>
           <TextInput 
            selectionColor={Colors.dark.tint} 
+           onChangeText={(text)=>{setName(text)}}
+           value={name}
           //  selectionColor={Colors.dark.tint} 
           //  underlineColorAndroid={Colors.dark.tint} 
            style={styles.input} placeholder='Name'/>
-          <TextInput style={styles.input} placeholder={validator?'Email':"Phone number"}/>
+          <TextInput 
+          onChangeText={(text)=>
+            {
+              {validator?setEmail(text):setPhoneNumber(text)}
+              regWith()
+              
+            
+            }}
+          value= {validator?email:phoneNumber}
+          style={styles.input} placeholder={validator?'Email':"Phone number"}/>
 
-          <TextInput  style={styles.input} placeholder='Date of birth'/>
+          <TextInput 
+          onChangeText={(text)=>{setDob(text)}}
+          value={dob}
+           style={styles.input} placeholder='Date of birth'/>
       </View>
       <View style={styles.instead}>
           <Text 
@@ -63,7 +88,12 @@ export default function NewTweet() {
             </Text>
           <Text style={styles.insteadInput2}
           onPress={()=>{
-            navigation.navigate('Experience')
+            navigation.navigate('Experience',
+            {
+              // name:'ll'
+              name,dob,
+              withReg
+            })
           }}
           >Next</Text>
          
@@ -78,6 +108,7 @@ export default function NewTweet() {
   )
 }
 
+export default NewTweet
 // const styles = StyleSheet.create({
  
 

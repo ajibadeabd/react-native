@@ -1,8 +1,10 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import * as React from 'react';
+// import * as React from 'react';
+import React ,{useState,useEffect} from 'react';
 import { ColorSchemeName,View,Text } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import UserMessages from '../components/message/EachMessage/messageDm';
@@ -14,18 +16,30 @@ import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/profilePicture/index';
 import DrawerContent from './drawerContent';
-
+// const storage = AsyncStorage.getItem('user')
 import { Ionicons,MaterialCommunityIcons,AntDesign } from '@expo/vector-icons';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  const [user,setUser]= useState('')
+ useEffect(() => {
+  let ll=()=>{
+ return   
+  }
+  // setUser(AsyncStorage.getItem('user'))
+
+
+
+ }, [AsyncStorage.getItem('user')])
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
       >
-        {'a'=='a'?
+        {
+        
+        await AsyncStorage.getItem('user')!=='user'?
         <AuthScreen/>
         :<RootNavigator />}
     </NavigationContainer>

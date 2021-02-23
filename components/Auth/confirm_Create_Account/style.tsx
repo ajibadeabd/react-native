@@ -77,8 +77,18 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         paddingHorizontal:'10%',
-        paddingVertical:'7%',
+        paddingTop:'18%',
         fontSize:11
+      },
+      signUp:{
+        color:"#fff",
+        backgroundColor:Colors.dark.tint,
+          fontSize:16,
+          fontWeight:'bold',
+          width:'80%',
+          paddingVertical:'2%',
+          textAlign:'center',
+          borderRadius:50,
       },
       insteadInput1:{
         fontSize:14,
@@ -130,7 +140,6 @@ maxWidth:'70%'
         padding:20,
         paddingBottom:'14.5%',
         paddingLeft:30,
-        borderBottomWidth:1,
         borderBottomColor:'lightgrey',
 
       },

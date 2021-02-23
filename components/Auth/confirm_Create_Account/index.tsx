@@ -1,7 +1,7 @@
 
 import  React,{useState} from 'react';
-import { StyleSheet,SafeAreaView,TextInput,TouchableWithoutFeedback,
-    TouchableOpacity,
+import { TextInput,TouchableWithoutFeedback,
+    TouchableOpacity,Alert,
      Keyboard } from 'react-native';
      
 import { MaterialIcons, AntDesign,Feather,Ionicons,  } from '@expo/vector-icons';
@@ -9,8 +9,17 @@ import Colors from '../../../constants/Colors';
 import { Text, View } from '../../Themed';
 import styles from './style';
 import { useNavigation } from '@react-navigation/native'
+export interface Props {
+    route: any;
+    enthusiasmLevel?: number;
+  }
+// export default function NewTweet({route}) {
+  const  NewTweet: React.FC<Props> = ({route}) => {
+    console.log(route.params.params)
+    const{dob,name,withReg} = route.params.params
+   
 
-export default function NewTweet() {
+    // console.log(route)
   const navigation=useNavigation();
     const onPress= ()=>{
         // navigation.goBack()
@@ -23,6 +32,25 @@ export default function NewTweet() {
   const [Tweet,setTweet]=useState('')
   const [imageurl,setTimageurl]=useState('')
   const [validator,setValidator]=useState(true)
+  const verify=()=>{
+    Alert.alert(
+      'Verify phone',
+      `we'll text your verification code to ${withReg}. Standard SMS fees may apply.`,
+      [
+        
+        {
+          text: 'Edit',
+          // onPress: () => console.log('Cancel Pressed'),
+          onPress: () => navigation.navigate("SignUp"),
+          style: 'cancel'
+        },
+        { text: 'OK',
+        onPress: () => navigation.navigate("OtpCode"),
+         }
+      ],
+      { cancelable: false }
+    );
+  }
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
@@ -49,35 +77,78 @@ export default function NewTweet() {
           <Text style={styles.create}>Create your account</Text>
           <TextInput 
            selectionColor={Colors.dark.tint} 
+           onKeyPress={()=>{navigation.navigate('SignUp')
+          }}
           //  selectionColor={Colors.dark.tint} 
           //  underlineColorAndroid={Colors.dark.tint} 
-           style={styles.input} placeholder='Name'/>
-          <TextInput style={styles.input} placeholder={validator?'Email':"Phone number"}/>
+           style={styles.input} value={name} placeholder='Name'/>
+          <TextInput  value={withReg} 
+           onKeyPress={()=>{navigation.navigate('SignUp')
+          }}
+          style={styles.input} />
 
-          <TextInput  style={styles.input} placeholder='Date of birth'/>
+          <TextInput 
+          value={dob} style={styles.input}
+          onKeyPress={()=>{navigation.navigate('SignUp')
+        }} placeholder='Date of birth'/>
       </View>
       <View style={styles.instead}>
-          <Text 
-          onPress={()=>{setValidator(!validator)}}
-          style={styles.insteadInput1}>{!validator?'Use Email address instead':"Use  phone number instead"}
-            </Text>
-          <Text style={styles.insteadInput2}
-          onPress={()=>{
-            navigation.navigate('Experience')
-          }}
-          >Next</Text>
+        {/* <Text> */}
+          <Text
+          style={{color:'grey',
+          fontSize:16,
+        // lineHeight: 16,
+
+        }}
+          >By Signing up, you agree to the
+            <Text 
+          style={{color:Colors.dark.tint,
+        }}
+          >Term of Service</Text> 
+          and <Text
+          style={{color:Colors.dark.tint,
+          }}>Privacy Policy</Text> , including <Text
+          style={{color:Colors.dark.tint,
+          }}>Cookie Use.</Text>
+          Others will be able to find you by email or phone number when provided.  <Text
+           style={{color:Colors.dark.tint,
+          }}>Privacy Options</Text>  
+
+        </Text>
+         
          
       </View>
-    
-     
+      <TouchableOpacity activeOpacity={.8}>
+
+      <View
+       style={{
+        alignItems:'center',
+        paddingTop:'6%',
+        
+
+
+       }}
+       >
+         <Text 
+         style={styles.signUp}
+        //  }
+        onPress={()=>{
+          // navigation.navigate("otpCode")
+          verify();
+          console.log('object')
+        }}
+        > Sign Up</Text>
       
+      </View>
+      </TouchableOpacity>
+
       </View>
     </TouchableWithoutFeedback>
 
 
   )
 }
-
+export default NewTweet
 // const styles = StyleSheet.create({
  
 
